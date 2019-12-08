@@ -5,8 +5,8 @@ import ColorBlock from "./ColorBlock"
 import '../index.css'
 let position = {
     position: "absolute",
-    top: "35%",
-    left: "35%"
+    top: "30%",
+    left: "30%"
 }
 var colors = []
 
@@ -84,8 +84,8 @@ class EasyMode extends React.Component {
                 </div>
                 : !this.state.win ?
                 <>
-                <h1 style={{paddingTop: "30px"}}>{this.state.colorsState[this.state.colorToQuess]}</h1>
-                <div style={{marginLeft: "22%", marginTop: "30px"}}>
+                <h1 style={{paddingTop: "30px"}}>Where is that color {this.state.colorsState[this.state.colorToQuess]}?</h1>
+                <div style={{marginLeft: "20%", marginTop: "30px"}}>
                 <Row style={{width: "800px"}}>
                 {this.state.colorsState.map((c, i) => (<ColorBlock quessingColors={this.quessingColors} key={i} color={c} />))}
                 </Row>
@@ -94,7 +94,7 @@ class EasyMode extends React.Component {
                 :
                 <>
                 <h1 style={{paddingTop: "30px"}}>You win!<Button className="btn-reset" onClick={this.resetGame}>Start again</Button></h1>
-                <div style={{marginLeft: "22%", marginTop: "30px"}}>
+                <div style={{marginLeft: "20%", marginTop: "30px"}}>
                 <Row style={{width: "800px"}}>
                 {this.state.colorsState.map((c, i) => (<ColorBlock quessingColors={this.quessingColors} key={i} color={c} />))}
                 </Row>

@@ -4,8 +4,8 @@ import {Button, Container} from 'reactstrap'
 import '../index.css'
 let position = {
     position: "absolute",
-    top: "35%",
-    left: "35%"
+    top: "30%",
+    left: "30%"
 }
 
 class WelcomePage extends React.Component {

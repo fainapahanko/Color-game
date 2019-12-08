@@ -47,7 +47,7 @@ h1{
 .btn-reset{
   width: 200px;
   background-color: #004156 !important;
-  border-radius: 50px;
+  border-radius: 60px !important;
   display: inline-block;
   border: none !important;
   height: 50px;
