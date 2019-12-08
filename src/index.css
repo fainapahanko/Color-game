@@ -44,6 +44,16 @@ h1{
   padding: 30px 30px;
   font-size: 24px !important;
 }
+.btn-reset{
+  width: 200px;
+  background-color: #004156 !important;
+  border-radius: 50px;
+  display: inline-block;
+  border: none !important;
+  height: 50px;
+  margin-left: 50px;
+  font-size: 24px !important;
+}
 .css-16j8fy0{
   margin-left: 190px;
   margin-top: 50px; 

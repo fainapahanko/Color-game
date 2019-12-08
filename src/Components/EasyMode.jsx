@@ -1,6 +1,6 @@
 import React from 'react';
 import { DotLoader } from 'react-spinners'
-import {Container, Row} from 'reactstrap'
+import {Container, Row, Button} from 'reactstrap'
 import ColorBlock from "./ColorBlock"
 import '../index.css'
 let position = {
@@ -36,6 +36,23 @@ class EasyMode extends React.Component {
             colors.push(color)
         }
     }
+    resetGame = () => {
+        this.setState({
+            isLoading: true,
+            backgroundColor: "rgb(255,255,255)",
+        })
+        colors = []
+        this.fullArrWithColors()
+        setTimeout(() => {
+            this.setState({
+                isLoading:false,
+                backgroundColor: "#BBC9DD",
+                colorsState: colors,
+                colorToQuess: Math.floor(Math.random() * Math.floor(6)),
+                win: false
+            })
+        }, 3000)
+    }
     quessingColors = (e) => {
         if(e.target.id === this.state.colorsState[this.state.colorToQuess]){
             colors = []
@@ -48,11 +65,12 @@ class EasyMode extends React.Component {
                     win: true,
                     colorsState: colors,
                 })
-            }, 500)
+            }, 200)
         } else {
             e.target.style.backgroundColor = "#181818"
         }
     }
+
     render() { 
         return (
             <Container fluid className="main-page-background" style={{backgroundColor: this.state.backgroundColor, textAlign:"center"}}>
@@ -75,7 +93,7 @@ class EasyMode extends React.Component {
                 </>
                 :
                 <>
-                <h1 style={{paddingTop: "30px"}}>You win!</h1>
+                <h1 style={{paddingTop: "30px"}}>You win!<Button className="btn-reset" onClick={this.resetGame}>Start again</Button></h1>
                 <div style={{marginLeft: "22%", marginTop: "30px"}}>
                 <Row style={{width: "800px"}}>
                 {this.state.colorsState.map((c, i) => (<ColorBlock quessingColors={this.quessingColors} key={i} color={c} />))}
