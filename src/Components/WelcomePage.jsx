@@ -23,10 +23,10 @@ class WelcomePage extends React.Component {
         }, 3000)
     }
     setMode = (e) => {
-        console.log(e.target.id, e.target.value)
         if(e.target.id === "easy") {
             this.props.history.push("/easyMode")
         } else {
+          this.props.history.push("/hardMode")
           this.setState({
             easy: false
           })
